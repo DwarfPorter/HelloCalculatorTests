@@ -1,7 +1,13 @@
 package ru.geekbrains.hellocalculator.calc;
 
 public class Calculator {
+    private double result;
+
     public void executeCommand(ICommand command) {
-        command.execute();
+        result = command.execute();
+    }
+
+    public double getResult() {
+        return result;
     }
 }
