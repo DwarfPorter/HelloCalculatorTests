@@ -27,8 +27,7 @@ public class CalculatorUnitTest {
     public void executeCommand_isCorrect(){
         Calculator underTest = new Calculator();
         ICommand command = mock(ICommand.class);
-        underTest.setArgument(2);
-        underTest.executeCommand(command);
+        underTest.setArgument(2).executeCommand(command);
         verify(command).execute(2);
     }
 
@@ -37,8 +36,8 @@ public class CalculatorUnitTest {
         Calculator underTest = new Calculator();
         ICommand command = mock(ICommand.class);
         when(command.execute(anyDouble())).thenReturn(42.0);
-        underTest.executeCommand(command);
-        assertEquals(42.0, underTest.getResult(), 0);
+        double actual = underTest.executeCommand(command).getResult();
+        assertEquals(42.0, actual, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
