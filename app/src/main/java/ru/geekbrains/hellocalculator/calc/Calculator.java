@@ -4,6 +4,9 @@ public class Calculator {
     private double result;
 
     public void executeCommand(ICommand command) {
+        if (command == null){
+            throw new IllegalArgumentException("command");
+        }
         result = command.execute();
     }
 
