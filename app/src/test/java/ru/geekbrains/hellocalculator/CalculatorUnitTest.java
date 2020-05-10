@@ -26,9 +26,16 @@ public class CalculatorUnitTest {
     public void executeCommand_isCorrect(){
         Calculator underTest = new Calculator();
         ICommand command = mock(ICommand.class);
-        when(command.execute()).thenReturn(42.0);
         underTest.executeCommand(command);
         verify(command).execute();
+    }
+
+    @Test
+    public void getResult_isCorrect(){
+        Calculator underTest = new Calculator();
+        ICommand command = mock(ICommand.class);
+        when(command.execute()).thenReturn(42.0);
+        underTest.executeCommand(command);
         assertEquals(42.0, underTest.getResult(), 0);
     }
 
