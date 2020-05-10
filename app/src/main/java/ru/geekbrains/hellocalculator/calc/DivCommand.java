@@ -6,6 +6,10 @@ public class DivCommand implements ICommand {
     private final double arg2;
 
     public DivCommand(double arg1, double arg2) {
+        if (arg2 == 0){
+            throw new IllegalArgumentException("arg2");
+        }
+
         this.arg1 = arg1;
         this.arg2 = arg2;
     }
