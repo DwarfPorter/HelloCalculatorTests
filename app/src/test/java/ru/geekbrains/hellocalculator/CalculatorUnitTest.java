@@ -31,4 +31,10 @@ public class CalculatorUnitTest {
         verify(command).execute();
         assertEquals(42.0, underTest.getResult(), 0);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void executeCommand_isWrong(){
+        Calculator underTest = new Calculator();
+        underTest.executeCommand(null);
+    }
 }
