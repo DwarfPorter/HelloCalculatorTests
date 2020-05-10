@@ -12,4 +12,10 @@ public class MulCommandUnitTest {
     public void constructor_isCorrect(){
         MulCommand underTest = new MulCommand(.0, .0);
     }
+
+    @Test
+    public void execute_isCorrect(){
+        MulCommand underTest = new MulCommand(3., 3.);
+        assertEquals(9., underTest.execute(), 0);
+    }
 }
