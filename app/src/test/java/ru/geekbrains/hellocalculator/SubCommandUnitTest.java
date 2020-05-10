@@ -10,12 +10,12 @@ public class SubCommandUnitTest {
 
     @Test(expected = Test.None.class)
     public void constructor_isCorrect(){
-        SubCommand underTest = new SubCommand(.0, .0);
+        SubCommand underTest = new SubCommand(.0);
     }
 
     @Test
     public void execute_isCorrect(){
-        SubCommand underTest = new SubCommand(5., 2.);
-        assertEquals(3., underTest.execute(), 0);
+        SubCommand underTest = new SubCommand(5.);
+        assertEquals(3., underTest.execute(2.), 0);
     }
 }

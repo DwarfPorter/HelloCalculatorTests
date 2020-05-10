@@ -6,6 +6,7 @@ import ru.geekbrains.hellocalculator.calc.Calculator;
 import ru.geekbrains.hellocalculator.calc.ICommand;
 
 import static org.junit.Assert.*;
+import static org.mockito.ArgumentMatchers.anyDouble;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -26,15 +27,16 @@ public class CalculatorUnitTest {
     public void executeCommand_isCorrect(){
         Calculator underTest = new Calculator();
         ICommand command = mock(ICommand.class);
+        underTest.setArgument(2);
         underTest.executeCommand(command);
-        verify(command).execute();
+        verify(command).execute(2);
     }
 
     @Test
     public void getResult_isCorrect(){
         Calculator underTest = new Calculator();
         ICommand command = mock(ICommand.class);
-        when(command.execute()).thenReturn(42.0);
+        when(command.execute(anyDouble())).thenReturn(42.0);
         underTest.executeCommand(command);
         assertEquals(42.0, underTest.getResult(), 0);
     }

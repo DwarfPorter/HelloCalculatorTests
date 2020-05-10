@@ -10,12 +10,12 @@ public class MulCommandUnitTest {
 
     @Test(expected = Test.None.class)
     public void constructor_isCorrect(){
-        MulCommand underTest = new MulCommand(.0, .0);
+        MulCommand underTest = new MulCommand(.0);
     }
 
     @Test
     public void execute_isCorrect(){
-        MulCommand underTest = new MulCommand(3., 3.);
-        assertEquals(9., underTest.execute(), 0);
+        MulCommand underTest = new MulCommand(3.);
+        assertEquals(9., underTest.execute(3.), 0);
     }
 }

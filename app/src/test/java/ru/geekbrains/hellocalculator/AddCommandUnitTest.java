@@ -10,13 +10,13 @@ public class AddCommandUnitTest {
 
     @Test(expected = Test.None.class)
     public void constructor_isCorrect(){
-        AddCommand underTest = new AddCommand(.0, .0);
+        AddCommand underTest = new AddCommand(.0);
     }
 
     @Test
     public void execute_isCorrect(){
-        AddCommand underTest = new AddCommand(2., 2.);
-        assertEquals(4., underTest.execute(), 0);
+        AddCommand underTest = new AddCommand(2.);
+        assertEquals(4., underTest.execute(2.), 0);
     }
 
 }
