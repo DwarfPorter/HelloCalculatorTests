@@ -1,4 +1,4 @@
-package ru.geekbrains.hellocalculator;
+package ru.geekbrains.hellocalculator.calc;
 
 public interface ICommand {
     double execute();
