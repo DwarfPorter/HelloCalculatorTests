@@ -12,6 +12,6 @@ public class AddCommand implements ICommand {
 
     @Override
     public double execute() {
-        return 0;
+        return arg1 + arg2;
     }
 }
