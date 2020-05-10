@@ -15,8 +15,15 @@ public class DivCommandUnitTest {
     }
 
     @Test
-    public void execute_isCorrect(){
+    public void execute_isCorrect() {
         DivCommand underTest = new DivCommand(15., 3.);
         assertEquals(5., underTest.execute(), 0);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void execute_isWrong(){
+        DivCommand underTest = new DivCommand(1., 0.);
+        underTest.execute();
+    }
+
 }
