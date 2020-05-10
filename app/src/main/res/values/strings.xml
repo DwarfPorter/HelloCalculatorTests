@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hello Calculator</string>
+    <string name="clear_text">C</string>
+    <string name="plus_text">+</string>
+    <string name="minus_text">-</string>
+    <string name="multi_text">*</string>
+    <string name="divide_text">/</string>
+    <string name="result_text">=</string>
+    <string name="argument_text">Аргумент</string>
+</resources>
